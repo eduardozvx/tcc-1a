@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: lightsalmon;
+           
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+      
+    </style>
+</head>
+<body>
+    <center><h1>✏️Adicionar Nomes dos Alunos✏️</h1></center>
+    <center><img src="captacao-de-novos-alunos.jpg" alt="a"></center>
+    <input type="text" id="nomeInput"placeholder="Digite o nome do aluno">
+    <button id="adicionarNomeBtn">Adicionar Nome</button>
+    <div id="nomes-container"></div>
+    <script>
+        function adicionarNome(){
+            const nomeInput =document.getElementById('nomeInput');
+            const nome = nomeInput.value.trim();
+            if(nome ==='') {
+                alert('Por favor, digite um nome.');
+                return;
+            }
+            const container= document.getElementById('nomes-container');
+            const novoNome = document.createElement('p');
+            novoNome.textContent = nome;
+            container.appendChild(novoNome);
+            nomeInput.value ='';
+            
+        }
+        const botao = document.getElementById('adicionarNomeBtn');
+        botao.addEventListener('click',adicionarNome);
+    </script>
+</body>
+</html>
